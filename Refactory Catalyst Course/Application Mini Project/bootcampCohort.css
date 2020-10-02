@@ -1,0 +1,33 @@
+h3 {
+color: white;
+font-family: sans-serif;
+font-weight: bold;
+float: left;
+padding: 10px;
+}
+
+.navBtns {
+    float: right;
+}
+
+button {
+    margin-right: 20px;
+}
+
+.card {
+    max-width: 100%;
+    max-height: 100%;
+    border-style: none;
+}
+
+footer {
+    height: 50px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    /* opacity: 0.6; */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
