@@ -1,0 +1,63 @@
+<!-- 
+DOM - Document Object Modeling
+A Document should have; name, file extension, content, format.
+Methods of a documents: save, write, delete.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessing Elements in the DOM</title>
+    <style>
+      /* Element Selectors to define the sytle within the document. This is internal styling */
+      html {
+        font-family: sans-serif;
+        color: #333;
+      }
+      body {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      div,
+      article {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #dedede;
+      }
+    </style>
+    <!-- You can add javascript code here using script src tag -->
+  </head>
+
+  <body>
+    <h1>Accessing elements in the DOM</h1>
+    <h2>ID (#demo)</h2>
+    <div id="demo">Access me by ID</div>
+
+    <h2>Class .demo</h2>
+    <div class="demo">Access me by Class (1)</div>
+
+    <div class="demo">Access me by Class (2)</div>
+
+    <h2>Tag (article)</h2>
+    <article>Accessed by tag name (tag1)</article>
+    <article>Accessed by tag name (tag2)</article>
+
+    <h2>Query Selector</h2>
+    <div class="demo-query">Access me by query selector</div>
+
+    <h2>Query selector All</h2>
+    <div class="demo-query-all">Access me by query selector (1)</div>
+
+    <div class="demo-query-all">Access me by query selector (2)</div>
+
+    <!-- You can add javascript code here -->
+  </body>
+  <script src="stylingDOM.js">
+    // You can embed javascript code here & style using js
+    // const demo = document.getElementById("demo");
+    // demo.style.border= "2px solid purple"
+  </script>
+</html>

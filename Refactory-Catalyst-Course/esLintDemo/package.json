@@ -1,0 +1,18 @@
+{
+  "name": "eslintdemo",
+  "version": "1.0.0",
+  "description": "es lint demo",
+  "main": "esLintTest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LizKamugisha/Coding-Practice/blob/main/Refactory-Catalyst-Course/esLintDemo/esLintTest.js"
+  },
+  "author": "liz kamugisha",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.10.0"
+  }
+}
