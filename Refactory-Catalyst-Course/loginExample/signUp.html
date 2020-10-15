@@ -21,16 +21,16 @@
         <div class="col-md-3"></div>
 
         <div class="col-md-6 main">
-          <form action="/sign_up" method="post">
+          <form action="/sign_up" method="post" name="signUpForm">
             <h1>Signup Form</h1>
 
+            <!-- Removed required from input so we can validate using js -->
             <input
               class="box"
               type="text"
               name="name"
               id="name"
-              placeholder="Name"
-              required
+              placeholder="Username"
             /><br />
 
             <input
@@ -39,7 +39,7 @@
               name="email"
               id="email"
               placeholder="E-Mail "
-              required
+              
             /><br />
 
             <input
@@ -48,7 +48,6 @@
               name="password"
               id="password"
               placeholder="Password "
-              required
             /><br />
 
             <input
@@ -57,14 +56,15 @@
               name="phone"
               id="phone"
               placeholder="Phone Number "
-              required
+              
             /><br />
             <br />
             <input
-              type="submit"
+              type="button"
               id="submitDetails"
               name="submitDetails"
               value="Submit"
+              onclick="accessSignup()"
             /><br />
           </form>
         </div>
@@ -73,7 +73,8 @@
       </div>
     </div>
   </body>
-  <script src="./login.js"></script>
+  <!-- <script src="./login.js"></script> -->
+  <script src="./formProcess.js"></script>
 </html>
 
 <!-- Web application processes data & gives an output & accepts input from a web browser
