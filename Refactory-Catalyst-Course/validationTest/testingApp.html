@@ -7,7 +7,7 @@
     <meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
     <meta name="description"
         content="This document is an example of JavaScript Field label form validation using a sample registration form. " />
-    <!-- Link html document to css stylesheet -->
+    <!-- Linked html document to css stylesheet -->
     <link rel="stylesheet" type="text/css" href="./testCss.css" />
     
 </head>
@@ -15,6 +15,7 @@
 <body onload="firstfocus();">
     <h1>JavaScript Field Label Form Validation using a registration form</h1>
     <h2>Use tab key or mouse to go next field</h2>
+    
     <!-- Put form name string in double quotes -->
     <form name="registration">
 <ul>
@@ -33,12 +34,12 @@
 <li><label for="country">Country [Must select a country] :</label></li>
 <li><select name="country" onblur="countryselect()">
         <option selected="" value="Default">(Please select a country)</option>
-        <!-- Give option values ids  -->
-        <option value="AF" id="af">Australia</option>
-        <option value="AL" id="al">Canada</option>
-        <option value="DZ" id="dz">India</option>
-        <option value="AS" id="as">Russia</option>
-        <option value="AD" id="ad">USA</option>
+        
+        <option value="AF">Australia</option>
+        <option value="AL">Canada</option>
+        <option value="DZ">India</option>
+        <option value="AS">Russia</option>
+        <option value="AD">USA</option>
     </select></li>
 
 <li><label for="zip">ZIP Code [numeric characters] :</label></li>
@@ -47,8 +48,8 @@
 <li><label for="email">Email [Valid email] :</label></li>
 <li><input type="text" name="email" size="50" onblur="ValidateEmail()" /></li>
 
-<!-- Removed checked from input for both gender & language selection in order to practice validation 
-Assign ID's to both gender & language so I can access the input values -->
+<!-- Removed checked from input for both gender & language selection in order to practice validation. 
+Assigned ID's to both gender & language so I can access the input values -->
 <li><label id="gender">Sex [Select Male or Female] :</label></li>
 <li><input type="radio" name="sex" value="Male" id="sexM"/><span>Male</span></li>
 <li><input type="radio" name="sex" value="Female" id="sexF" /><span>Female</span></li>
@@ -60,13 +61,13 @@ Assign ID's to both gender & language so I can access the input values -->
 <li><label for="desc">About [Optional] :</label></li>
 <li><textarea name="desc" id="desc"></textarea></li>
 
-<!-- Edit onclick to run method instead of alert
-Edit input type to button so js validation test styling can remain visible on screen unless user refreshes the page -->
+<!-- Edited onclick to run validateRegForm() method instead of an alert
+Edited input type to button so js validation test styling can remain visible on screen unless user refreshes the page -->
 <li><input type="button" name="submit" value="submit" onclick="validateRegForm()"/></li>
 </ul>
     </form>
 </body>
-<!-- Link html document to JavaScript file -->
+<!-- Linked html document to JavaScript file -->
 <script src="./testApp.js"></script>
 
 </html>
