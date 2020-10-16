@@ -3,69 +3,101 @@
 
 <head>
     <meta charset="utf-8">
-    <title>JavaScript Field Label Form Validation using a registration form</title>
     <meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
-    <meta name="description"
-        content="This document is an example of JavaScript Field label form validation using a sample registration form. " />
+    <meta name="description" content="This document is an example of JavaScript Field label form validation using a sample registration form. " />
+    <title>JavaScript Field Label Form Validation using a registration form</title>
+    <!-- Linked to bootstrap styling -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
     <!-- Linked html document to css stylesheet -->
     <link rel="stylesheet" type="text/css" href="./testCss.css" />
     
 </head>
 
 <body onload="firstfocus();">
-    <h1>JavaScript Field Label Form Validation using a registration form</h1>
-    <h2>Use tab key or mouse to go next field</h2>
     
-    <!-- Put form name string in double quotes -->
-    <form name="registration">
+
+    <!-- Put headings & form in div -->
+<div class = "container">
+    <h3>JavaScript Field Label Form Validation Using A Registration Form</h3>
+    <h3>( Use tab key or mouse to go next field )</h3>
+<div class="col-md-10 formDiv">
+    <!-- Put form name & Style form using bootstarp classes & CSS 
+    Add action & method to connect to backend -->
+    <form name="registration" action="./testProcess.js" method="POST">
 <ul>
-<li><label for=" userid">User id [5 to 12 characters] :</label></li>
-<li><input type="text" name="userid" size="12" onblur="userid_validation(5,12)" /></li>
+<li><input type="text" name="userid" size="12" class="col-md-10" placeholder="Please Enter User ID" onblur="userid_validation(5,12)"/></li>
+<li><label for="userid">* User ID is required. It must be 5 to 12 characters without space inbetween.</label></li>
 
-<li><label for="passid">Password [7 to 12 characters] :</label></li>
-<li><input type="password" name="passid" size="12" onblur="passid_validation(7,12)" /></li>
+<li><input type="password" name="passid" size="12" class="col-md-10" placeholder="Please Enter Password" onblur="passid_validation(7,12)" /></li>
+<li><label for="passid">* Password is required. It must be 7 to 12 characters without space inbetween.</label></li>
 
-<li><label for="username">Name [Alphabates characters] :</label></li>
-<li><input type="text" name="username" size="50" onblur="allLetter()" /></li>
+<li><input type="text" name="username" size="50" class="col-md-10" placeholder="Please Enter First & Last Name" onblur="allLetter()" /></li>
+<li><label for="username">* Name is required. Please use alphabetic characters only.</label></li>
 
-<li><label for="address">Address [alphanumeric characters] :</label></li>
-<li><input type="text" name="address" size="50" onblur="alphanumeric()" /></li>
+<li><input type="text" name="address" size="50" class="col-md-10" placeholder="Please Enter Your Address" onblur="alphanumeric()" /></li>
+<li><label for="address">* Address is required. Please use alphanumeric characters only.</label></li>
 
-<li><label for="country">Country [Must select a country] :</label></li>
-<li><select name="country" onblur="countryselect()">
-        <option selected="" value="Default">(Please select a country)</option>
-        
-        <option value="AF">Australia</option>
-        <option value="AL">Canada</option>
-        <option value="DZ">India</option>
-        <option value="AS">Russia</option>
-        <option value="AD">USA</option>
-    </select></li>
+<li><select name="country" class="col-md-10" onblur="countryselect()">
+    <option selected="" value="Default"> Please Select a Country </option>
+    
+    <option value="AF">Australia</option>
+    <option value="AL">Canada</option>
+    <option value="DZ">India</option>
+    <option value="AS">Russia</option>
+    <option value="AD">USA</option>
+</select></li>
+<li><label for="country">* Country must be selected.</label></li>
 
-<li><label for="zip">ZIP Code [numeric characters] :</label></li>
-<li><input type="text" name="zip" onblur="allnumeric()" /></li>
+<li><input type="text" name="zip" class="col-md-10" placeholder="Please Enter Your ZIP Code" onblur="allnumeric()" /></li>
+<li><label for="zip">* ZIP Code is required. Please use numeric characters only.</label></li>
 
-<li><label for="email">Email [Valid email] :</label></li>
-<li><input type="text" name="email" size="50" onblur="ValidateEmail()" /></li>
+<li><input type="text" name="email" size="50" class="col-md-10" placeholder="Please Enter Your Email Address" onblur="ValidateEmail()" /></li>
+<li><label for="email">* Email address is required.</label></li>
 
 <!-- Removed checked from input for both gender & language selection in order to practice validation. 
-Assigned ID's to both gender & language so I can access the input values -->
-<li><label id="gender">Sex [Select Male or Female] :</label></li>
+Assigned ID's to both gender & language so I can access the input values
+Put it in seperate divs -->
+<div class="row row-cols-3">
+    <div class="col-md-4">
+<li><label id="gender"> <h5>Please Select Your Gender:</h5></label></li>
+    </div>
+    <div class="col-md-2">
 <li><input type="radio" name="sex" value="Male" id="sexM"/><span>Male</span></li>
+    </div>
+    <div class="col-md-2">
 <li><input type="radio" name="sex" value="Female" id="sexF" /><span>Female</span></li>
+</div>
+</div>
 
-<li><label>Language [Optional] :</label></li>
-<li><input type="checkbox" name="en" value="en" id="langEn"/><span>English</span></li>
-<li><input type="checkbox" name="noen" value="noen" id="langNoen"/><span>Non English</span></li>
+<div class="row row-cols-3">
+    <div class="col-md-4">
+        <li><label><h5>Please Select Your Language:</h5></label></li>
+    </div>
+    <div class="col-md-2">
+        <li><input type="checkbox" name="en" value="en" id="langEn"/><span>English</span></li>
+    </div>
+    <div class="col-md-2">
+        <li><input type="checkbox" name="noen" value="noen" id="langNoen"/><span>Non English</span></li>
+    </div>
+</div>
 
-<li><label for="desc">About [Optional] :</label></li>
-<li><textarea name="desc" id="desc"></textarea></li>
+<li><textarea name="desc" id="desc" class="col-md-10" placeholder="You can enter any extra information here."></textarea></li>
+<li><label for="desc">* Extra information & Language information is optional</label></li>
 
 <!-- Edited onclick to run validateRegForm() method instead of an alert
 Edited input type to button so js validation test styling can remain visible on screen unless user refreshes the page -->
-<li><input type="button" name="submit" value="submit" onclick="validateRegForm()"/></li>
+<li><input type="submit" name="submit" value="submit" onclick="validateRegForm()"/></li>
 </ul>
     </form>
+</div>
+</div>
+</div>
+
 </body>
 <!-- Linked html document to JavaScript file -->
 <script src="./testApp.js"></script>
