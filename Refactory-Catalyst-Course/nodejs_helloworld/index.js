@@ -1,18 +1,25 @@
-//To test if the node is working
+// To test if the node is working:
 // console.log('Hello, World! Node is working...');
 
-//In order to use the express dependencies we need to import it into our project using require key word 
+// In order to use the package.json dependencies such as express & body-parser we need to import it into our project using require key word 
 const express = require('express')
-//create an express application by calling the express() function
-const app = express();
+const bodyParser= require('body-parser') 
 
-// Specify what to do when user hits the '/' (home page) route/endpoint
-// eg. res.send('Homepage ! Hello World.')
+// Create an express application by calling the express() function
+const app = express() 
 
+// Middleware settings must be placed before CRUD handlers
+app.use(bodyParser.urlencoded({extended: true}))
+
+// Specify what to do when user hits the '/' route/endpoint e.g /homepage or /qoutes
 app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/helloWorld.html')
-});
+})
 
+app.post('/', (req, res) => { 
+    console.log(req.body) 
+    // console.log('Hellooooooooooooooooo!')
+  })
 // Specify what to do when user hits the '/about' (home page) route/endpoint
 // app.get('/about', (req,res)=>{
 //     res.send("This is the about us page")
