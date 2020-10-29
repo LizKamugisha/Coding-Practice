@@ -1,0 +1,23 @@
+.nav-link {
+  font-weight: bold;
+  font-size: 15pt;
+}
+/* .nav-link:hover {
+  color: #8cc63f;
+} */
+.greenBox {
+  background-color: #8cc63f;
+  padding-top: 50px;
+}
+h5,
+h6 {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+form li {
+  list-style: none;
+  margin-bottom: 15px;
+  /* float: center; */
+}

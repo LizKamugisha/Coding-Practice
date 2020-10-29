@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+    <title>FO Registration</title>
+         <!-- Bootstrap & CSS Stylesheet -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" type="text/css" href="./foRegForm.css" />
+    
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Navigation Menu -->
+        <nav
+          class="navbar navbar-expand-lg navbar-light justify-content-between"
+          style="background-color: #8cc63f;"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="./ufLogoWhite.png" width="155" height="70" alt="" />
+          </a>
+          <!-- nav settings ? -->
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button> -->
+  
+          <div class="navbar navbar-default">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ADMIN
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Register F.O</a>
+                  <a class="dropdown-item" href="#">List All F.O</a>
+                  <a class="dropdown-item" href="#">Appoint New F.O</a>
+                  <a class="dropdown-item" href="#">Create F.O Login</a>
+                  <!-- <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Logout</a> -->
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">LOGOUT</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+  
+        <div class="container">
+            <div class="col-md-10 regFormDiv">
+                <h3>Farmer One Registration</h3>
+                 <!-- Put form name & Style form using bootstarp classes & CSS 
+                Add action & method to connect to backend -->
+                <form name="foRegForm" action="./validateRegForm.js" method="POST">
+                    <ul>
+                        <li><input type="text" name="userid" size="12" class="col-md-10" placeholder="Please Enter User ID" onblur="userid_validation(5,12)"/></li>
+                        <li><label for="userid">* User ID is required. It must be 5 to 12 characters without space inbetween.</label></li>
+                        
+                        <li><input type="password" name="passid" size="12" class="col-md-10" placeholder="Please Enter Password" onblur="passid_validation(7,12)" /></li>
+                        <li><label for="passid">* Password is required. It must be 7 to 12 characters without space inbetween.</label></li>
+                        
+                        <li><input type="text" name="username" size="50" class="col-md-10" placeholder="Please Enter First & Last Name" onblur="allLetter()" /></li>
+                        <li><label for="username">* Name is required. Please use alphabetic characters only.</label></li>
+                        
+                        <li><input type="text" name="address" size="50" class="col-md-10" placeholder="Please Enter Your Address" onblur="alphanumeric()" /></li>
+                        <li><label for="address">* Address is required. Please use alphanumeric characters only.</label></li>
+                        
+                        <li><select name="country" class="col-md-10" onblur="countryselect()">
+                            <option selected="" value="Default"> Please Select a Country </option>
+                            
+                            <option value="AF">Australia</option>
+                            <option value="AL">Canada</option>
+                            <option value="DZ">India</option>
+                            <option value="AS">Russia</option>
+                            <option value="AD">USA</option>
+                        </select></li>
+                        <li><label for="country">* Country must be selected.</label></li>
+                        
+                        <li><input type="text" name="zip" class="col-md-10" placeholder="Please Enter Your ZIP Code" onblur="allnumeric()" /></li>
+                        <li><label for="zip">* ZIP Code is required. Please use numeric characters only.</label></li>
+                        
+                        <li><input type="text" name="email" size="50" class="col-md-10" placeholder="Please Enter Your Email Address" onblur="ValidateEmail()" /></li>
+                        <li><label for="email">* Email address is required.</label></li>
+                        
+                        <!-- Removed checked from input for both gender & language selection in order to practice validation. 
+                        Assigned ID's to both gender & language so I can access the input values
+                        Put it in seperate divs -->
+                        <div class="row row-cols-3">
+                            <div class="col-md-4">
+                        <li><label id="gender"> <h5>Please Select Your Gender:</h5></label></li>
+                            </div>
+                            <div class="col-md-2">
+                        <li><input type="radio" name="sex" value="Male" id="sexM"/><span>Male</span></li>
+                            </div>
+                            <div class="col-md-2">
+                        <li><input type="radio" name="sex" value="Female" id="sexF" /><span>Female</span></li>
+                        </div>
+                        </div>
+                        
+                        <div class="row row-cols-3">
+                            <div class="col-md-4">
+                                <li><label><h5>Please Select Your Language:</h5></label></li>
+                            </div>
+                            <div class="col-md-2">
+                                <li><input type="checkbox" name="en" value="en" id="langEn"/><span>English</span></li>
+                            </div>
+                            <div class="col-md-2">
+                                <li><input type="checkbox" name="noen" value="noen" id="langNoen"/><span>Non English</span></li>
+                            </div>
+                        </div>
+                        
+                        <li><textarea name="desc" id="desc" class="col-md-10" placeholder="You can enter any extra information here."></textarea></li>
+                        <li><label for="desc">* Extra information & Language information is optional</label></li>
+                        
+                        <!-- Edited onclick to run validateRegForm() method instead of an alert
+                        Edited input type to button so js validation test styling can remain visible on screen unless user refreshes the page -->
+                        <li><input type="submit" name="submit" value="submit" onclick="validateRegForm()"/></li>
+                        </ul>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+     <!-- Bootstarp JavaScript plugins -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

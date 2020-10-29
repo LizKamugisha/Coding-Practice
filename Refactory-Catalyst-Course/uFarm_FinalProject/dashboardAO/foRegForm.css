@@ -1,0 +1,56 @@
+body {
+  background-color: #e6e6e6;
+}
+.navbar {
+  background-color: #8cc63f;
+}
+.nav-link {
+  font-weight: bold;
+  font-size: 15pt;
+}
+.regFormDiv {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px #888888;
+  border-radius: 10px;
+  margin: auto;
+  width: auto;
+}
+h3 {
+  color: #606060;
+  font-weight: bold;
+  text-align: center;
+  font-family: serif;
+  padding: 20px;
+}
+form li {
+  list-style: none;
+}
+form ul li label {
+  /* float: left;
+    clear: left; */
+  /* width: 265px; */
+  /* text-align: right; */
+  /* margin-right: 10px; */
+  /* font-family: sans-serif; */
+  font-weight: normal;
+  font-size: 12px;
+}
+form ul li input,
+select,
+span {
+  float: left;
+  margin-bottom: 10px;
+  /* comment out border styling in order to see validation test styling in js */
+  /* border: 1px solid maroon; */
+}
+form textarea {
+  /* float: left; */
+  width: 350px;
+  height: 150px;
+}
+[type="button"] {
+  clear: left;
+  margin: 20px 0 0 300px;
+  font-size: 18px;
+}

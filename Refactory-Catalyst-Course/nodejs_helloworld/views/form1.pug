@@ -1,0 +1,68 @@
+doctype html  
+html(lang='en')  
+    head
+        title Pug Form Example
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
+        script(src="js/validateForm.js")
+    body
+    form(class="form1" action="/form1" method="POST" name="form1")
+        p
+            label Name
+            input(type="text" name="customer_name" required)
+        p
+            label Phone
+            input(type="tel" name="phone_number")
+        p
+            label Email
+            input(type="email" name="email_address")
+    fieldset
+        legend Which taxi do you require?
+        p
+            label
+            input(type="radio" name="taxi" required value="car") 
+            | Car 
+        p
+            label
+            input(type="radio" name="taxi" required value="van") 
+            | Van
+        p
+            label
+            input(type="radio" name="taxi" required value="tuktuk") 
+            | Tuk Tuk
+    fieldset
+        legend Extras
+        p
+            label
+            input(type="checkbox" name="extras" value="baby") 
+            | Baby Seat
+        p
+            label
+            input(type="checkbox" name="extras" value="wheelchair") 
+            | Wheelchair Access
+        p
+            label
+            input(type="checkbox" name="extras" value="tip") 
+            | Stock Tip
+    p
+        label Pickup Date/Time
+        input(type="datetime-local" name="pickup_time" required)
+    p
+        label Pickup Place
+        select(id="pickup_place" name="pickup_place")
+            option(value="" selected="selected") Select One
+            option(value="office") Taxi Office
+            option(value="town_hall") Town Hall
+            option(value="telepathy") We'll Guess!
+    p
+        label Dropoff Place
+        input(type="text" name="dropoff_place" required list="destinations")
+            
+        datalist(id="destinations")
+            option(value="Airport")
+            option(value="Beach")
+            option(value="Fred Flinstone's House")
+    p
+        label Special Instructions
+        textarea(name="comments" maxlength="500")
+    p
+        button(type="submit" name="submit") Submit Booking
