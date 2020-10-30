@@ -35,8 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Middleware settings must be placed before CRUD handlers
 app.use(bodyParser.urlencoded({extended: true}))
 
-//To access files in Public folder where
-
 // Specify what to do when user hits the '/' route/endpoint e.g /homepage or /qoutes
 // Good practice to have the Get & Post Routes matching
 
@@ -46,7 +44,7 @@ app.get('/form1',(req,res)=>{
   res.render('form1')
 });
 
-// Route for posting in form and printing data from the form
+// Route for posting in form and printing data from the form on a linked page
 app.post('/form1', (req,res)=>{
   console.log(req.body)
   res.render('thankYou')

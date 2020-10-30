@@ -1,0 +1,68 @@
+body {
+  background-color: #ddf3e5;
+}
+.greenBox {
+  background-color: #ddf3e5;
+  padding-top: 150px;
+  margin: -10px;
+}
+.thankYouBox {
+  text-align: center;
+  margin-top: 300px;
+}
+.welcomeText {
+  padding: 50px;
+  text-align: center;
+  font-size: 18pt;
+}
+h1 {
+  color: #e4a827;
+  text-align: center;
+}
+button.btn {
+  /* margin: auto; */
+  margin-left: 260px;
+  font-size: 15pt;
+}
+.formBox {
+  background-color: white;
+  margin-top: 100px;
+  box-shadow: 5px 5px 5px 5px #88888888;
+  width: 900px;
+  padding: 10px;
+}
+label {
+  font-weight: normal;
+  font-size: 16pt;
+}
+input {
+  margin-bottom: 15px;
+}
+.form-group {
+  text-align: center;
+  font-size: 16pt;
+  padding: 5px;
+  margin-top: 30px;
+}
+.genderOption {
+  text-align: left;
+}
+.leftLabel {
+  /* font-weight: bolder; */
+  text-align: left;
+  margin-left: 40px;
+}
+.checkLabel {
+  font-size: 14pt;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+#btnStyle {
+  margin: auto;
+  width: 200px;
+  margin: 10px;
+}
+h5 {
+  color: red;
+  text-align: center;
+}
