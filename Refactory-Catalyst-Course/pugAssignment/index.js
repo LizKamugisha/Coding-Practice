@@ -14,12 +14,6 @@ const pageRoutes = require('./routes/indexRoutes');
 // Create an express application
 const app = express() 
 
-// Connect to MongoDB datatbase using Mongoose
-mongoose.connect(process.env.testDB, {
-    useUnifiedTopology:true,
-    useNewURLParser:true }
-    );
-
 /*  Test if the mongoose connection is open or not
     mongoose.connection
     .on("open", () => {
@@ -39,6 +33,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Body Parser Middleware settings
 app.use(bodyParser.urlencoded({extended: true}))
+
+// Connect to MongoDB datatbase using Mongoose
+mongoose.connect(process.env.testDB, {
+  useUnifiedTopology:true,
+  useNewURLParser:true, }
+  );
 
 // Routing
 app.use('/', pageRoutes);

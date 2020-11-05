@@ -1,5 +1,8 @@
 const express = require('express');
+// const mongoose = require('mongoose')
 const router = express.Router();
+// Importing model schema 
+const Registration = require('../models/registration')
 
 //Get Methods
 router.get('/', (req,res) =>{
@@ -9,8 +12,18 @@ router.get('/', (req,res) =>{
 //Post Methods
 router.post('/aoDash', (req,res) =>{
     console.log(req.body)
-    res.redirect('aoDash')
+
+// To Save Login Info to database, create object, pass it the data & save it using asyncronous method
+    const registration = new Registration(req.body);
+    registration.save()
+    .then(() => { res.send('Thank you for your registration!'); })
+    .catch((err) => {
+      console.log(err);
+      res.send('Sorry! Something went wrong.');
+    });
+// res.redirect('aoDash')
 });
+
 // router.post('/foLogin', (req,res) =>{
 //     console.log(req.body)
 //     res.render('foDash')

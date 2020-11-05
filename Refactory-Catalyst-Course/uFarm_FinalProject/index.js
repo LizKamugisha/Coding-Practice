@@ -4,7 +4,10 @@
 // Require dependencies into project
 const path = require('path')
 const express = require('express')
-const bodyParser= require('body-parser') 
+const bodyParser= require('body-parser')
+const mongoose = require('mongoose')
+require('dotenv/config')
+// require('dotenv').config();
 
 // instantiating variables & assigning them with imported routes
 const home = require('./routes/uFarmHome');
@@ -16,6 +19,21 @@ const uFarmShop = require('./routes/customer');
 
 // Create an express application
 const app = express() 
+
+// Connect to MongoDB datatbase using Mongoose
+mongoose.connect(process.env.testDB, {
+    useUnifiedTopology:true,
+    useNewURLParser:true, 
+    });
+
+/*  Test if the mongoose connection is open or not */
+    mongoose.connection
+    .on("open", () => {
+      console.log("Mongoose connection open");
+    })
+    .on("error", err => {
+    console.log(`Connection error: ${err.message}`);
+    });
 
 // Link path & connect to views directory
 app.set('view engine','pug')
