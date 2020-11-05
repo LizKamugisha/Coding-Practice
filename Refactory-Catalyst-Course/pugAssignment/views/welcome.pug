@@ -1,9 +1,5 @@
-html(lang='en')  
-    head
-        title Welcome
-        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
-        link(rel="stylesheet" type="text/css" href="css/style.css")
-    body
+extends layout
+block content    
     div.container-fluid.row-cols-2
         div.col-md-6
             img(src="images/femaleDevPic.jpg" width="680" height="680")
@@ -13,4 +9,5 @@ html(lang='en')
                 p My name is Liz Kamugisha and I’m an aspiring full stack software developer. If you would like to follow my programming journey, or get some beginner friendly tips on what I have learnt so far, subscribe to my blog newsletter !
                 form(method="POST" action="/linkToForm")
                     button(type="submit" class="btn btn-warning btn-lg col-md-3" name="subscribe" value="submit") Subscribe
-                    //- Try linking using href
+                    //- Try linking using href ?
+                    //- a(href="./form.pug" class="button") Click Here

@@ -8,6 +8,9 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 require('dotenv/config')
 
+// instantiating variables & assigning them with imported routes
+const pageRoutes = require('./routes/indexRoutes');
+
 // Create an express application
 const app = express() 
 
@@ -37,26 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Body Parser Middleware settings
 app.use(bodyParser.urlencoded({extended: true}))
 
-// Define route endpoints / CRUD handlers
-app.get('/welcome',(req,res)=>{
-    res.render('welcome')
-    });
-app.get('/form',(req,res)=>{
-    res.render('form')
-});
-app.get('/thankYou',(req,res)=>{
-    res.render('thankYou')
-});
-
-// Link pug pages ??
-app.post('/linkToForm', (req, res) => {
-  console.log(req.body)
-  res.render('form')
-});
-app.post('/form', (req, res) => {
-  console.log(req.body)
-  res.render('thankYou')
-});
+// Routing
+app.use('/', pageRoutes);
 
 // Create a server that listens on port 3000 for requests
 app.listen(3000, ()=> console.log('listening on port 3000'));

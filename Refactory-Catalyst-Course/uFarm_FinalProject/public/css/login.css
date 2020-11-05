@@ -1,0 +1,27 @@
+.nav-link {
+  font-weight: bold;
+  font-size: 15pt;
+}
+/* .nav-link:hover {
+  color: #8cc63f;
+} */
+.greenBox {
+  background-color: #8cc63f;
+  padding-top: 50px;
+}
+h5 {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.btmText {
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+}
+form li {
+  list-style: none;
+  margin-bottom: 15px;
+  /* float: center; */
+}
