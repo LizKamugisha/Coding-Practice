@@ -22,8 +22,9 @@ const app = express()
 
 // Connect to MongoDB datatbase using Mongoose
 mongoose.connect(process.env.testDB, {
+    useNewUrlParser:true,
     useUnifiedTopology:true,
-    useNewURLParser:true, 
+    useCreateIndex: true,
     });
 
 /*  Test if the mongoose connection is open or not */
@@ -39,19 +40,32 @@ mongoose.connect(process.env.testDB, {
 app.set('view engine','pug')
 app.set('views', path.join(__dirname, 'views'))
 
-// Connect to public folder
-app.use(express.static(path.join(__dirname,'public')))
+//Simple request time logger for a specific route
+// app.use((req, res, next) => {
+//   console.log('A new request received at ' + Date.now());
+//   next();
+// });
 
 // Body Parser Middleware settings
 app.use(bodyParser.urlencoded({extended: true}))
 
+// Connect to public folder
+app.use(express.static(path.join(__dirname,'public')))
+
 // Routing
 app.use('/home', home);
-app.use('/login', login);
+app.use('/', login);
 app.use('/aoDash', ao);
+app.use('/foRegForm', ao);
+// app.use('/logout', ao);
 app.use('/foDash', fo);
 app.use('/ufDash', uf);
 app.use('/shop', uFarmShop);
+
+// Incase of Error
+app.get('*',(req,res)=>{
+  res.send('error page')
+})
 
 // Create a server that listens on port 3000 for requests
 app.listen(3000, ()=> console.log('listening on port 3000'))

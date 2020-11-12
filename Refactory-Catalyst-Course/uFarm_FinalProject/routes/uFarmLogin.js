@@ -11,17 +11,18 @@ router.get('/', (req,res) =>{
 
 //Post Methods
 router.post('/aoDash', (req,res) =>{
-    console.log(req.body)
+    // console.log(req.body)
 
 // To Save Login Info to database, create object, pass it the data & save it using asyncronous method
     const registration = new Registration(req.body);
     registration.save()
-    .then(() => { res.send('Thank you for your registration!'); })
+    .then(() => { res.redirect('aoDash'); })
     .catch((err) => {
       console.log(err);
       res.send('Sorry! Something went wrong.');
     });
-// res.redirect('aoDash')
+    // res.redirect('aoDash')
+    // res.render('aoDash')
 });
 
 // router.post('/foLogin', (req,res) =>{

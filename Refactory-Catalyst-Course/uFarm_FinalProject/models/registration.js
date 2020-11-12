@@ -5,13 +5,14 @@ const mongoose = require('mongoose');
 const registrationSchema = new mongoose.Schema({
     userid: {
       type: String,
-      trim: true,
+      unique: true,
+      required: 'Please enter username',
     },
-    password: {
+    pwd: {
       type: String,
       required: 'Please enter password',
     },
-    selectRole: 'string'
+    selectRole: String,
 
   });
   
