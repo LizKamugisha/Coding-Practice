@@ -1,0 +1,47 @@
+#tvBox {
+  background-color: rgb(39, 39, 39);
+  border-radius: 20px;
+  width: 750px;
+  height: 450px;
+  padding: 30px;
+  margin: auto;
+}
+.screen {
+  background-color: rgb(179, 179, 179);
+  border-radius: 10px;
+  width: 700px;
+  height: 400px;
+  margin: auto;
+}
+img {
+  border-radius: 10px;
+  width: 700px;
+  height: 400px;
+  margin-left: 30px;
+}
+.tvStand1 {
+  background-color: rgb(0, 0, 0);
+  width: 200px;
+  height: 50px;
+  margin: auto;
+}
+.tvStand2 {
+  background-color: rgb(39, 39, 39);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 300px;
+  height: 50px;
+  margin: auto;
+}
+button {
+  border-style: none;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+i {
+  color: rgb(255, 103, 103);
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue TV</title>
+    <!-- Font Awesome Icons -->
+    <script src="https://use.fontawesome.com/5a8a273464.js"></script>
+    <link rel="stylesheet" href="../css/vueTV.css">
+</head>
+<body>
+    <div id="tvBox">
+        <div class="screen" v-if="tvScreen"></div>
+        <img src="vueLogo.gif" v-if="!tvScreen">
+        <button v-on:click="toggle"><i class="fa fa-power-off fa-3x" aria-hidden="true"></i></button>
+    </div>
+        
+    <div class="tvStand1"></div>
+    <div class="tvStand2"></div>
+    
+    <script src="../js/vue.js"></script>
+    <script src="../js/vueTV.js"></script>
+</body>
+</html>

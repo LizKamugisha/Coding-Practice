@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- Exersize one -->
+        <!-- <div>{{title}}</div>
+        <hr/>
+        <ul>
+            <li>
+                {{intro}}
+            </li>
+        </ul>
+        <button v-on:click="greetLiz">Greet Liz</button> -->
+        
+        <!-- Exersize Two -->
+        <div>
+            <h1 v-if="signal">On</h1>
+            <h1 v-if="!signal">Off</h1>
+            <!-- <h1 v-else-if="signal==undefined">Undefined</h1> -->
+            <!-- <h1 v-else="signal">Off</h1> -->
+            <button v-on:click="toggle">Toggle</button>
+        </div>
+
+        <!-- Exersize 3 -->
+        <!-- <div>
+            <ol>
+                <li v-for="item in items">
+                    {{item}}
+                </li>
+            </ol>
+        </div> -->
+
+        <!-- Exersize 4 -->
+        <!-- <h1>{{}}</h1>
+        <h1 v-bind:title="message">{{title}}</h1> -->
+    
+    </div>
+
+    <!-- Connecting to vue using a CDN (Content Delivery Network) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> -->
+    <script src="../js/vue.js"></script>
+    <script src="../js/custom.js"></script>
+</body>
+</html>
+
+<!-- NOTES:
+* in pug we would use #{greet} but in vue we use {{greet}}
+* v-on binds events to a methods
+* v-if & v-show work in the same way, however the difference is:
+v-show the element is hidden or visable & element is always part of the Dom. The advantage of this is better performance
+v-if the element is displayed or not, & element either exisits in the DOM or not. The advantage of this is better memory use
+* v-if can also work with v-else and v-else-if for conditional rendering
+* v-for helps with looping through arrays
+* v-bind can
+-->
