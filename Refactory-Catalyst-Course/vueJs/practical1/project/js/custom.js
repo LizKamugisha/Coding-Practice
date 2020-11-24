@@ -16,22 +16,22 @@
 //   });
 
 // Exersize 2: Using Directives
-new Vue({
-      //The Element Selector Property
-      el : "#app",
-      //The Data Property
-      data(){
-        return {
-          signal:false
-        }
-      },
-      //The Method Property
-      methods : {
-        toggle:function(){
-        this.signal = !this.signal;
-        }
-      }
-    });
+// new Vue({
+//       //The Element Selector Property
+//       el : "#app",
+//       //The Data Property
+//       data(){
+//         return {
+//           signal:false
+//         }
+//       },
+//       //The Method Property
+//       methods : {
+//         toggle:function(){
+//         this.signal = !this.signal;
+//         }
+//       }
+//     });
 
 // Exersize 3: Looping through array
 // new Vue({
@@ -52,22 +52,14 @@ new Vue({
 //   }
 // });
 
-// Exersize 4: Bidning ?
-// new Vue({
-//     //The Element Selector Property
-//     el : "#app",
-//     //The Data Property
-//     data : {
-//       title:"Hello Catalyst!",
-//       message:"What cohort are you in?"
-//     },
-//     //The Method Property
-//     methods : {
-//       greetLiz:function(){
-//       alert("Hello Liz!");
-//       }  
-//     }
-//   });
+// Exersize 4: Bidning key value pairs
+new Vue({
+    el : "#app",
+    data : {
+      text:"Hover over me",
+      message:"and reveal a secret message"
+    }
+  });
 
 
 // NOTES:
@@ -78,4 +70,3 @@ new Vue({
 // data = holds App data variables
 //methods = stores a series of statements that determine behaviours / processes 
 
-// Vue Directives = 

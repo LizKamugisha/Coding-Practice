@@ -18,13 +18,13 @@
         <button v-on:click="greetLiz">Greet Liz</button> -->
         
         <!-- Exersize Two -->
-        <div>
+        <!-- <div>
             <h1 v-if="signal">On</h1>
             <h1 v-if="!signal">Off</h1>
-            <!-- <h1 v-else-if="signal==undefined">Undefined</h1> -->
-            <!-- <h1 v-else="signal">Off</h1> -->
+            <h1 v-else-if="signal==undefined">Undefined</h1>
+            <h1 v-else="signal">Off</h1>
             <button v-on:click="toggle">Toggle</button>
-        </div>
+        </div> -->
 
         <!-- Exersize 3 -->
         <!-- <div>
@@ -36,8 +36,7 @@
         </div> -->
 
         <!-- Exersize 4 -->
-        <!-- <h1>{{}}</h1>
-        <h1 v-bind:title="message">{{title}}</h1> -->
+        <h1 v-bind:title="message">{{text}}</h1>
     
     </div>
 
@@ -56,5 +55,5 @@ v-show the element is hidden or visable & element is always part of the Dom. The
 v-if the element is displayed or not, & element either exisits in the DOM or not. The advantage of this is better memory use
 * v-if can also work with v-else and v-else-if for conditional rendering
 * v-for helps with looping through arrays
-* v-bind can
+* v-bind 
 -->
