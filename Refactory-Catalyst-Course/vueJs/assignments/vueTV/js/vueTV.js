@@ -4,7 +4,8 @@ new Vue({
     //The Data Property
     data(){
       return {
-        tvScreen:true
+        tv: "../images/vueLogo.gif",
+        tvScreen:false,
       }
     },
     //The Method Property
